@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA,KACE,sBAAuB,CACxB,KAGC,QAAS,CACT,SAAU","file":"main.6d3c3310.chunk.css","sourcesContent":["html {\n  scroll-behavior: smooth;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n}\n"]}
