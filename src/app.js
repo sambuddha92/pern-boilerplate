@@ -17,7 +17,7 @@ const accessLogStream = createWriteStream(resolve(__dirname, "access.log"), {
 
 /*Apply middleware with separate requirements in prod and dev in mind*/
 //Middleware appicable identically in all environments
-app.use(express.static(resolve(__dirname, "client", "build"))); //To serve static files such as images, CSS, and JS
+app.use(express.static(resolve(__dirname, "..", "client", "build"))); //To serve static files such as images, CSS, and JS
 app.use(express.urlencoded({ extended: true })); //parses incoming requests with urlencoded payloads
 app.use(express.json()); //parses incoming request bodies and makes it available under the req.body property.
 app.use(cookieParser()); //parses cookie header and populate req.cookies with an object keyed by the cookie names.
