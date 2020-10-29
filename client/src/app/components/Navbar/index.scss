@@ -1,0 +1,26 @@
+/*Import global variables*/
+@import "../../styles/variables.scss";
+
+/*Declare local variables*/
+$font-size : 0.875rem;
+$height : 44px;
+
+.Navbar {
+    background-color: $mine-shaft;
+    color: $athens-grey;
+    font-family: $primary;
+    font-size: $font-size;
+    height: $height;
+
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: $highest-z;
+}
+
+.Navbar-Offset {
+    height: $height;
+}
