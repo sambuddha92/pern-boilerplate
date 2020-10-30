@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
       },
       process.env.ACCESS_TOKEN_SECRET
     );
-    let expiryTime = new Date(process.env.AUTH_EXPIRES_IN + Date.now());
+    let expiryTime = new Date(+process.env.AUTH_EXPIRES_IN * 1000 + Date.now());
     res.cookie("t", token, {
       expires: expiryTime,
       httpOnly: true,

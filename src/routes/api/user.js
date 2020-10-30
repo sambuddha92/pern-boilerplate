@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express"),
  router = express.Router(),
  bcrypt = require("bcryptjs"),
+ jwt = require("jsonwebtoken"),
  mw = require("../../middleware"),
  util = require("../../util");
 
@@ -28,16 +29,33 @@ router.post("/", async (req, res) => {
     //Insert new user to the table and store the newUser in a variable
     const newUser = await util.addNewUser(login_id, hashed_password, first_name, last_name);
 
+    //Prepare user info to be sent to client and for access token
+    const authenticated_user = {
+      id: newUser.id,
+      login_id: newUser.login_id,
+      first_name: newUser.first_name,
+      last_name: newUser.last_name,
+    };
+
+    //Create and set access token via cookie
+    let token = jwt.sign(
+      {
+        user: authenticated_user,
+      },
+      process.env.ACCESS_TOKEN_SECRET
+    );
+    let expiryTime = new Date(+process.env.AUTH_EXPIRES_IN * 1000 + Date.now());
+    res.cookie("t", token, {
+      expires: expiryTime,
+      httpOnly: true,
+    });
+
     return res.status(200).json({
-      message: "Registered",
+      message: "Registered & logged in",
       payload: {
-        user: {
-          id: newUser.id,
-          login_id: newUser.login_id,
-          first_name: newUser.first_name,
-          last_name: newUser.last_name
-        }
-      }
+        expires: expiryTime,
+        user: authenticated_user,
+      },
     });
 
   } catch (error) {

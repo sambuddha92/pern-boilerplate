@@ -1,10 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signout } from "./app/state/authSlice";
 
-import SigninPage from "./app/pages/Signin";
-import LandingPage from "./app/pages/Landing";
+import PrivateRoute from "./app/containers/PrivateRoute";
+
+const LandingPage = React.lazy(() => import("./app/pages/Landing"));
+const SigninPage = React.lazy(() => import("./app/pages/Signin"));
+const SignupPage = React.lazy(() => import("./app/pages/Signup"));
+const DashboardPage = React.lazy(() => import("./app/pages/Dashboard"));
+const PrivatePage = React.lazy(() => import("./app/pages/Private"));
 
 const App = (props) => {
   //Check and update authentication status
@@ -22,10 +27,15 @@ const App = (props) => {
 
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" {...props} component={LandingPage} />
-        <Route exact path="/signin" {...props} component={SigninPage} />
-      </Switch>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          <Route exact path="/" {...props} component={LandingPage} />
+          <Route exact path="/signin" {...props} component={SigninPage} />
+          <Route exact path="/signup" {...props} component={SignupPage} />
+          <PrivateRoute exact path="/dashboard" {...props} component={DashboardPage} />
+          <PrivateRoute exact path="/another" {...props} component={PrivatePage} />
+        </Switch>
+      </Suspense>
     </Router>
   );
 };

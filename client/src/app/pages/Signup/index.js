@@ -6,16 +6,17 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 //Import containers
+import Signup from "../../containers/Signup";
 
 
-const TemplatePage = () => {
+const SignupPage = () => {
     return(
         <React.Fragment>
             <Navbar />
-            <div className="TemplatePage">This is a Template Page</div>
+            <Signup />
             <Footer />
         </React.Fragment>
     )
 }
 
-export default TemplatePage;
+export default SignupPage;

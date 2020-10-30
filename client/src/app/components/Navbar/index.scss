@@ -10,15 +10,24 @@ $height : 44px;
     color: $athens-grey;
     font-family: $primary;
     font-size: $font-size;
-    height: $height;
-
-    display: flex;
-    align-items: center;
 
     position: fixed;
     top: 0;
     width: 100%;
     z-index: $highest-z;
+
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: $height;
+        padding: 0 100px;
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
 }
 
 .Navbar-Offset {
