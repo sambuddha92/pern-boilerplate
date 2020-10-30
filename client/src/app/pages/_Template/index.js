@@ -11,7 +11,7 @@ const TemplatePage = () => {
     return(
         <React.Fragment>
             <Navbar />
-            <div>This is a Template Page</div>
+            <div className="TemplatePage">This is a Template Page</div>
             <Footer />
         </React.Fragment>
     )

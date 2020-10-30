@@ -8,36 +8,40 @@ import { signin, signout } from "../../state/authSlice";
 
 const Signin = () => {
   const dispatch = useDispatch();
-  const auth = useSelector(state => state.auth);
+  const auth = useSelector((state) => state.auth);
 
   const defaultLocalState = {
     loginId: "",
-    password: ""
-  }
+    password: "",
+  };
 
   const [localState, setLocalState] = useState(defaultLocalState);
 
   const onChangeLoginId = (e) => {
     e.preventDefault();
-    setLocalState({...localState, loginId: e.target.value});
+    setLocalState({ ...localState, loginId: e.target.value });
   };
 
   const onChangePassword = (e) => {
     e.preventDefault();
-    setLocalState({...localState, password: e.target.value});
+    setLocalState({ ...localState, password: e.target.value });
   };
 
   const onClickSignIn = async (e) => {
     try {
       e.preventDefault();
+
       const res = await axios.post("/auth/local", {
         login_id: localState.loginId,
         password: localState.password,
       });
-      setLocalState(defaultLocalState);
+
       if (res.status === 200) {
-        dispatch(signin());
+        const { expires, user } = res.data.payload;
+        dispatch(signin({ expires, user }));
       }
+
+      setLocalState(defaultLocalState);
     } catch (error) {
       console.error(error);
     }
@@ -71,7 +75,9 @@ const Signin = () => {
         onChange={onChangePassword}
       />
       <button onClick={onClickSignIn}>Sign In</button>
-      {auth.isAuthenticated ? <button onClick={onClickSignOut}>Sign Out</button> : null}
+      {auth.isAuthenticated ? (
+        <button onClick={onClickSignOut}>Sign Out</button>
+      ) : null}
     </div>
   );
 };

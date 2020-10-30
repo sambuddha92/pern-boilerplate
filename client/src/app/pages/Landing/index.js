@@ -12,7 +12,7 @@ const LandingPage = () => {
     return(
         <React.Fragment>
             <Navbar />
-            <div>This is the Landing Page</div>
+            <div className="LandingPage">This is the Landing Page</div>
             <Footer />
         </React.Fragment>
     )

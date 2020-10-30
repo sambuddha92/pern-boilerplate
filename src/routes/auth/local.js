@@ -3,9 +3,8 @@ const express = require("express"),
   router = express.Router(),
   bcrypt = require("bcryptjs"),
   jwt = require("jsonwebtoken"),
-  { pool } = require("../../config/db"),
-  mw = require("../../config/middleware"),
-  util = require("../../config/util");
+  mw = require("../../middleware"),
+  util = require("../../util");
 
 //@route    POST auth/local
 //@desc     Authenticate user and set access token cookie
@@ -15,14 +14,14 @@ router.post("/", async (req, res) => {
     const { login_id, password } = req.body;
 
     //Check and notify if user does not exist
-    const user = await util.getUserByLoginId(login_id, pool);
+    const user = await util.getUserByLoginId(login_id);
     if (!user) {
       return res.status(404).json({
         message: "No such user",
       });
     }
 
-    //Store user details and notify if passwords do not match
+    //Check and notify if passwords do not match
     const { hashed_password } = user;
     const passwords_match = await bcrypt.compare(password, hashed_password);
     if (!passwords_match) {
@@ -31,15 +30,33 @@ router.post("/", async (req, res) => {
       });
     }
 
+    //Prepare user info to be sent to client and for access token
+    const authenticated_user = {
+      id: user.id,
+      login_id: user.login_id,
+      first_name: user.first_name,
+      last_name: user.last_name,
+    };
+
     //Create and set access token via cookie
-    let token = jwt.sign({ user }, process.env.ACCESS_TOKEN_SECRET);
+    let token = jwt.sign(
+      {
+        user: authenticated_user,
+      },
+      process.env.ACCESS_TOKEN_SECRET
+    );
+    let expiryTime = new Date(process.env.AUTH_EXPIRES_IN + Date.now());
     res.cookie("t", token, {
-      maxAge: 5 * 3600 * 1000, //5 hours in milli seconds
+      expires: expiryTime,
       httpOnly: true,
     });
 
     return res.status(200).json({
       message: "Logged in",
+      payload: {
+        expires: expiryTime,
+        user: authenticated_user,
+      },
     });
   } catch (error) {
     console.error(error);
@@ -53,7 +70,7 @@ router.post("/", async (req, res) => {
 //@route    DELETE auth/local
 //@desc     Delete access token cookie
 //@access   private
-router.delete("/",[mw.authenticate], async (req, res) => {
+router.delete("/", [mw.authenticate], async (req, res) => {
   try {
     res.clearCookie("t");
     return res.status(200).json({

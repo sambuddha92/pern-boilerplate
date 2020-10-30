@@ -4,16 +4,19 @@ export const authSlice = createSlice({
   name: "auth",
   initialState: {
     isAuthenticated: false,
-    timestamp: null,
+    user: {},
+    expires: null,
   },
   reducers: {
-    signin: (state) => {
+    signin: (state, action) => {
       state.isAuthenticated = true;
-      state.timestamp = Date.now();
+      state.user = action.payload.user;
+      state.expires = action.payload.expires;
     },
     signout: (state) => {
       state.isAuthenticated = false;
-      state.timestamp = null;
+      state.user = {};
+      state.expires = null;
     },
   },
 });
