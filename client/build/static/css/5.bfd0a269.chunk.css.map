@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/app/routes/Dashboard/index.scss"],"names":[],"mappings":"AAAA,WACI,aAAc,CACd,SAAU,CACV,eAAgB,CAChB,iBAAkB","file":"5.bfd0a269.chunk.css","sourcesContent":[".Dashboard {\n    margin: 0 auto;\n    width: 50%;\n    padding: 210px 0;\n    text-align: center;\n}"]}
