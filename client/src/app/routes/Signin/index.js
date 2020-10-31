@@ -51,14 +51,14 @@ const Signin = () => {
       <h2>Sign In</h2>
       <input
         type="text"
-        placeholder="Your Login Id"
+        placeholder="Login Id"
         name="loginId"
         value={localState.loginId}
         onChange={handleChange}
       />
       <input
         type="password"
-        placeholder="Your Password"
+        placeholder="Password"
         name="password"
         value={localState.password}
         onChange={handleChange}

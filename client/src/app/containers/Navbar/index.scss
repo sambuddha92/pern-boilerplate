@@ -27,6 +27,11 @@ $height : 44px;
             text-decoration: none;
             color: inherit;
         }
+
+        a.active {
+            color: $jumbo-grey;
+            text-decoration: underline;
+        }
     }
 }
 

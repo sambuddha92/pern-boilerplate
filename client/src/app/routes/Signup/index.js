@@ -55,28 +55,28 @@ const Signup = () => {
       <h2>Sign Up</h2>
       <input
         type="text"
-        placeholder="Your First Name"
+        placeholder="First Name"
         name="firstName"
         value={localState.firstName}
         onChange={handleChange}
       />
       <input
         type="text"
-        placeholder="Your Last Name"
+        placeholder="Last Name"
         name="lastName"
         value={localState.lastName}
         onChange={handleChange}
       />
       <input
         type="text"
-        placeholder="Your Login Id"
+        placeholder="Login Id"
         name="loginId"
         value={localState.loginId}
         onChange={handleChange}
       />
       <input
         type="password"
-        placeholder="Your Password"
+        placeholder="Password"
         name="password"
         value={localState.password}
         onChange={handleChange}

@@ -1,6 +1,12 @@
+//Import Global Style Variables
+@import "./app/styles/variables.scss";
+
 /***** Global Style Defaults *****/
 
+
 html {
+  color: $shark-dark;
+  font-family:'Montserrat', sans-serif;
   scroll-behavior: smooth;
   body {
     margin: 0;
