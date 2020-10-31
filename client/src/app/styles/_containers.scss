@@ -1,0 +1,22 @@
+.fluid-container {
+  margin: auto;
+  
+  @media screen and (max-width: $mobile) {
+    width: 95%;
+  }
+  @media screen and (min-width: $mobile + 1px) and (max-width: $tablet) {
+    width: 90%;
+  }
+  @media screen and (min-width: $tablet + 1px) and (max-width: $medium) {
+    width: 85%;
+  }
+  @media screen and (min-width: $medium + 1px) and (max-width: $laptop) {
+    width: 80%;
+  }
+  @media screen and (min-width: $laptop + 1px) and (max-width: $desktop) {
+    width: 75%;
+  }
+  @media screen and (min-width: $desktop + 1) {
+    width: 70%;
+  }
+}

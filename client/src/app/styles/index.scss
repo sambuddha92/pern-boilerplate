@@ -1,0 +1,26 @@
+@import "./_variables.scss";
+@import "./_containers.scss";
+
+/***** Global Style Defaults *****/
+html {
+  color: $black;
+  font-family:$primary;
+  scroll-behavior: smooth;
+}
+
+body, div, section, nav, footer, form, table, article, img, iframe, input, button, h1, h2, h3, h4, h5, h6, p  {
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/***** Media Query Blocks *****/
+
+/*
+    @media screen and (max-width: $mobile) { }
+    @media screen and (min-width: $mobile + 1px) and (max-width: $tablet ) { }
+    @media screen and (min-width: $tablet + 1px) and (max-width: $medium ) { }
+    @media screen and (min-width: $medium + 1px) and (max-width: $laptop ) { }
+    @media screen and (min-width: $laptop + 1px) and (max-width: $desktop) { }
+    @media screen and (min-width: $desktop + 1) { }
+*/

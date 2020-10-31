@@ -8,7 +8,7 @@ import SignoutButton from "../../containers/SignoutButton";
 
 const Dashboard = () => {
   return (
-    <div className="Dashboard">
+    <div className="Dashboard fluid-container">
       <h2>Dashboard</h2>
       <p>
         This is the Dashboard Page. This is a private route and only displayed

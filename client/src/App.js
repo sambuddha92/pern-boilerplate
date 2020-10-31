@@ -1,7 +1,9 @@
 import React, { useEffect, Suspense } from "react";
+import "./app/styles/index.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signout } from "./app/state/authSlice";
+
 
 import PrivateRoute from "./app/containers/PrivateRoute";
 import Navbar from "./app/containers/Navbar";

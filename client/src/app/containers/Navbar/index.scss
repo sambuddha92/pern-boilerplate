@@ -1,14 +1,10 @@
-/*Import global variables*/
-@import "../../styles/variables.scss";
-
+@import "../../styles/_variables.scss";
 /*Declare local variables*/
 $font-size : 0.875rem;
-$height : 44px;
 
 .Navbar {
-    background-color: $mine-shaft;
-    color: $athens-grey;
-    font-family: $primary;
+    background-color: $dark;
+    color: $off-white;
     font-size: $font-size;
 
     position: fixed;
@@ -20,8 +16,7 @@ $height : 44px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: $height;
-        padding: 0 100px;
+        height: $nav-height;
 
         a{
             text-decoration: none;
@@ -29,12 +24,11 @@ $height : 44px;
         }
 
         a.active {
-            color: $jumbo-grey;
-            text-decoration: underline;
+            color: $light-grey;
         }
     }
 }
 
 .Navbar-Offset {
-    height: $height;
+    height: $nav-height;
 }
