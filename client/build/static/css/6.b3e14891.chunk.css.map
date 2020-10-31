@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/app/routes/Landing/index.scss"],"names":[],"mappings":"AAAA,SACI,aAAc,CACd,SAAU,CACV,eAAgB,CAHpB,YAKQ,iBAAkB","file":"6.b3e14891.chunk.css","sourcesContent":[".Landing {\n    margin: 0 auto;\n    width: 50%;\n    padding: 150px 0;\n    h2 {\n        text-align: center;\n    }\n}"]}

@@ -1,2 +1,0 @@
-(this.webpackJsonpclient=this.webpackJsonpclient||[]).push([[7],{89:function(e,i,t){},94:function(e,i,t){"use strict";t.r(i);var s=t(1),n=(t(0),t(89),t(27));i.default=function(){return Object(s.jsxs)("div",{className:"Private",children:[Object(s.jsx)("h2",{children:"Another Private Page"}),Object(s.jsx)("p",{children:"This is Another Private Page. This is a private route and only displayed if user is logged in."}),Object(s.jsx)(n.a,{})]})}}}]);
-//# sourceMappingURL=7.464e5c41.chunk.js.map

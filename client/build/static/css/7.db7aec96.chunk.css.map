@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/app/routes/Private/index.scss"],"names":[],"mappings":"AAAA,SACI,aAAc,CACd,SAAU,CACV,eAAgB,CAChB,iBAAkB","file":"7.db7aec96.chunk.css","sourcesContent":[".Private {\n    margin: 0 auto;\n    width: 50%;\n    padding: 210px 0;\n    text-align: center;\n}"]}
