@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "10.16.0",
+    "npm": "7.0.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "heroku-postbuild": "npm install --prefix ./client && npm run build --prefix ./client",
     "server": "nodemon server.js",
     "client": "npm start --prefix ./client",
     "build": "npm run build --prefix ./client",
