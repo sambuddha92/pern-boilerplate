@@ -1,16 +1,15 @@
+@import "../../styles/variables";
 .Signup {
-    margin: 0 auto;
-    width: 300px;
-    padding: 150px 0;
+  .inner {
+    margin: {
+        left: auto;
+        right: auto;
+    };
+    padding: {
+      top: map-get($spacing, "md");
+      bottom: map-get($spacing, "md");
+    }
     text-align: center;
-    input {
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 8px;
-        padding: 5px 20px;
-        width: 200px;
-    }
-    button {
-        margin-top: 15px;
-    }
+    width: max-content;
+  }
 }

@@ -1,0 +1,21 @@
+@import "./variables";
+.no-deco {
+    text-decoration: none;
+    color: inherit;
+  }
+
+.is-bold {
+  font-weight: 600;
+}
+
+@each $key, $val in $size {
+  .is-#{$key} {
+    font-size: $val;
+  }
+}
+
+@each $key, $val in $text-alignment {
+  .has-text-#{$key} {
+    text-align: $val;
+  }
+}

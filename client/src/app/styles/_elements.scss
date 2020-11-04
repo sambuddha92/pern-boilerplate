@@ -1,0 +1,90 @@
+@import "./_variables.scss";
+button.button {
+  background-color: map-get($color, "light-grey");
+  border: {
+    color: map-get($color, "light-grey");
+    radius: map-get($size, "xxxs");
+    style: solid;
+    width: 1px;
+  }
+  color: map-get($color, "black");
+  cursor: pointer;
+  font: {
+    size: map-get($size, "md");
+    weight: 400;
+  }
+  margin: {
+    top: map-get($size, "xs");
+    bottom: map-get($size, "xs");
+  };
+  outline: none;
+  overflow: visible;
+  padding: map-get($size, "xxs") map-get($size, "sm");
+  text-align: center;
+  transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out,
+    color 0.1s ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: darken(map-get($color, "light-grey"), 10%);
+    border-color: darken(map-get($color, "light-grey"), 10%);
+  }
+
+  &.is-small {
+    border-radius: map-get($size, "xxxs");
+    font-size: map-get($size, "sm");
+    padding: map-get($size, "xxs") map-get($size, "xs");
+  }
+
+  &.is-large {
+    border-radius: map-get($size, "xxs");
+    font-size: map-get($size, "lg");
+    padding: map-get($size, "xs") map-get($size, "lg");
+  }
+
+  @each $key, $val in $color {
+    &.is-#{$key} {
+      background-color: $val;
+      border-color: $val;
+      color: map-get($color, "light");
+
+      &:hover {
+        background-color: darken($val, 10%);
+        border-color: darken($val, 10%);
+      }
+
+      &.is-hollow {
+        background-color: transparent;
+        color: $val;
+
+        &:hover {
+          color: darken($val, 15%);
+          background-color: lighten($val, 30%);
+        }
+      }
+    }
+  }
+}
+
+input.input {
+  background-color: transparent;
+  border: {
+    color: map-get($color, "light-grey");
+    radius: map-get($size, "xxxs");
+    style: solid;
+    width: 1px;
+  }
+  display: block;
+  margin: {
+    top: map-get($size, "xs");
+    bottom: map-get($size, "xs");
+  };
+  min-width: 1.6 * map-get($spacing, "xl");
+  overflow: visible;
+  padding: map-get($size, "xs") map-get($size, "sm");
+  text: {
+    indent: 0;
+  }
+}

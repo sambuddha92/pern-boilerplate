@@ -1,3 +1,28 @@
+@import "../../styles/variables";
 .Dashboard {
-    text-align: center;
+  background-color: map-get($color, "light");
+  .inner {
+    padding: {
+      top: map-get($spacing, "xl");
+      bottom: map-get($spacing, "xl");
+    }
+  }
+  .title {
+    font: {
+      weight: 500;
+    }
+    letter-spacing: 2px;
+  }
+  .subtitle {
+    margin: {
+      left: auto;
+      right: auto;
+      top: map-get($size, "lg");
+      bottom: map-get($size, "lg");
+    }
+    max-width: 420px;
+  }
+  .buttons {
+    justify-content: center;
+  }
 }

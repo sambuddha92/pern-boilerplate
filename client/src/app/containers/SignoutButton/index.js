@@ -3,7 +3,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { signout } from "../../state/authSlice";
 
-const Signout = () => {
+const Signout = (props) => {
     const dispatch = useDispatch();
 
     const onClickSignout = async (e) => {
@@ -20,7 +20,7 @@ const Signout = () => {
           }
     }
     return(
-        <button onClick={onClickSignout}>Sign Out</button>
+        <button onClick={onClickSignout} {...props} >Sign Out</button>
     )
 
 }

@@ -14,14 +14,14 @@ const NavbarMain = () => {
   const auth = useSelector((state) => state.auth);
   return (
     <nav className="Navbar">
-      <div className="inner fluid-container">
-        <NavLink exact activeClassName="active" to="/">
+      <div className="inner container is-fixed">
+        <NavLink exact activeClassName="active" className="no-deco" to="/">
           Home
         </NavLink>
-        <NavLink exact activeClassName="active" to="/dashboard">
+        <NavLink exact activeClassName="active" className="no-deco" to="/dashboard">
           Dashboard
         </NavLink>
-        <NavLink exact activeClassName="active" to="/another">
+        <NavLink exact activeClassName="active" className="no-deco" to="/another">
           Another Private Page
         </NavLink>
         {auth.isAuthenticated ? (
@@ -30,10 +30,10 @@ const NavbarMain = () => {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <NavLink exact activeClassName="active" to="/signin">
+            <NavLink exact activeClassName="active" className="no-deco" to="/signin">
               Sign In
             </NavLink>
-            <NavLink exact activeClassName="active" to="/signup">
+            <NavLink exact activeClassName="active" className="no-deco" to="/signup">
               Sign Up
             </NavLink>
           </React.Fragment>

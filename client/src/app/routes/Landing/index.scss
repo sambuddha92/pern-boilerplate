@@ -1,8 +1,33 @@
+@import "../../styles/variables";
 .Landing {
-    margin: 0 auto;
-    width: 50%;
-    padding: 150px 0;
-    h2 {
-        text-align: center;
+    .inner {
+        padding: {
+            top: map-get($spacing, "xl");
+            bottom: map-get($spacing, "xl");
+        }
+        .title {
+            font: {
+                weight: 500;
+            }
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            margin: {
+                left: auto;
+                right: auto;
+                top: map-get($size, "lg");
+                bottom: map-get($size, "lg");
+            };
+            max-width: 420px;
+        }
+        .buttons {
+            justify-content: center;
+            :not(:last-child) {
+                margin-right: map-get($size, "sm");
+            }
+            .button {
+                min-width: 1.2 * map-get($spacing, "xl");
+            }
+        }
     }
 }

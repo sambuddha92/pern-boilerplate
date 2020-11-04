@@ -1,28 +1,74 @@
-/*Colors*/
-$off-white : #F5F7F7;
-$light-grey : #86868B;
-$dark : #333333;
-$black : #1D1D1F;
-$blue : #1B9CFC;
-$turquoise : #25CCF7;
+$breakpoint: (
+  "mobile": 575px,
+  "tablet": 767px,
+  "medium": 991px,
+  "laptop": 1199px,
+  "desktop": 1440px,
+);
 
-/*Typography*/
-$primary : 'Montserrat', sans-serif;
+$breather: (
+  "mobile": 2.5%,
+  "tablet": 5%,
+  "medium": 7.5%,
+  "laptop": 10%,
+  "desktop": 12.5%,
+  "full": 15%,
+);
 
-/*Layout*/
-$desktop-padding : 150px;
+$color: (
+  "light": #f5f7f7,
+  "dark": #333333,
+  "light-grey": #e6e6e6,
+  "grey": #86868b,
+  "black": #1d1d1f,
+  "violet": #240a40,
+  "indigo": #4f69c6,
+  "blue": #1b9cfc,
+  "green": #436a0d,
+  "yellow": #ffc93c,
+  "orange": #ff681f,
+  "red": #cd0a0a,
+  "turquoise": #25ccf7,
+);
 
-/*Z Index*/
-$highest-z : 2147483647;
-$lowest-z : -2147483647;
+$size: (
+  "xxxs": 0.25rem,
+  "xxs": 0.375rem,
+  "xs": 0.5rem,
+  "sm": 0.75rem,
+  "md": 0.875rem,
+  "rem": 1rem,
+  "lg": 1.25rem,
+  "xl": 1.5rem,
+  "xxl": 2rem,
+  "xxxl": 2.5rem,
+  "xxxxl": 3rem,
+  "huge": 4.5em,
+);
 
-/*Break Points*/
-$mobile : 575px;
-$tablet : 767px;
-$medium : 991px;
-$laptop : 1199px;
-$desktop : 1440px;
+$spacing: (
+  "xs": 0.5rem,
+  "sm": 3rem,
+  "md": 4rem,
+  "lg": 6rem,
+  "xl": 10rem
+);
 
+$text-alignment: (
+  "left": left,
+  "right": right,
+  "centered": center,
+  "justified": justify,
+);
 
-/*Custom Sizing*/
-$nav-height : 44px;
+$typography: (
+  "primary": (
+    "Montserrat",
+    sans-serif,
+  ),
+);
+
+$z-index: (
+  "highest": 2147483647,
+  "lowest": -2147483647,
+);

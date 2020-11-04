@@ -1,26 +1,42 @@
-@import "./_variables.scss";
+@import "./variables";
+
+@import "./_modifiers.scss";
+@import "./_elements.scss";
 @import "./_containers.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
 
 /***** Global Style Defaults *****/
 html {
-  color: $black;
-  font-family:$primary;
+  color: map-get($color, "black");
   scroll-behavior: smooth;
 }
 
-body, div, section, nav, footer, form, table, article, img, iframe, input, button, h1, h2, h3, h4, h5, h6, p  {
-  font-family: inherit;
+body, div, section, nav, footer, form, table, article, img, iframe, input, textarea, optgroup, select, button, ul, ol, li, a, h1, h2, h3, h4, h5, h6, p  {
+  font-family:map-get($typography, "primary");
   margin: 0;
-  padding: 0;
+  text-rendering: optimizeLegibility;
 }
 
 /***** Media Query Blocks *****/
 
 /*
-    @media screen and (max-width: $mobile) { }
-    @media screen and (min-width: $mobile + 1px) and (max-width: $tablet ) { }
-    @media screen and (min-width: $tablet + 1px) and (max-width: $medium ) { }
-    @media screen and (min-width: $medium + 1px) and (max-width: $laptop ) { }
-    @media screen and (min-width: $laptop + 1px) and (max-width: $desktop) { }
-    @media screen and (min-width: $desktop + 1) { }
+    @media screen and (max-width: map-get($breakpoint,"mobile")) {
+
+    }
+    @media screen and (min-width: map-get($breakpoint,"mobile") + 1px) and (max-width: map-get($breakpoint,"tablet") ) {
+
+    }
+    @media screen and (min-width: map-get($breakpoint,"tablet") + 1px) and (max-width: map-get($breakpoint,"medium") ) {
+
+    }
+    @media screen and (min-width: map-get($breakpoint,"medium") + 1px) and (max-width: map-get($breakpoint,"laptop") ) {
+
+    }
+    @media screen and (min-width: map-get($breakpoint,"laptop") + 1px) and (max-width: map-get($breakpoint,"desktop")) {
+
+    }
+    @media screen and (min-width: map-get($breakpoint,"desktop") + 1px) {
+      
+    }
 */
