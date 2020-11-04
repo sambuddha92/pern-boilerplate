@@ -1,6 +1,6 @@
-CREATE DATABASE cumin;
+--CREATE DATABASE cumin;
 
-\c cumin;
+--\c cumin;
 
 CREATE TABLE app_user
 (
@@ -10,10 +10,3 @@ CREATE TABLE app_user
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255)
 );
-
-
-/* Query to Delete a user
-
-DELETE 	FROM app_user WHERE login_id = 'j0hn' AND first_name = 'John' AND last_name = 'Doe';
-
-*/
