@@ -6,7 +6,7 @@ app.get("*", (req, res) => {
   res.sendFile(resolve(__dirname, "client", "build", "index.html"));
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server live on port ${PORT} 🔥`);
 });

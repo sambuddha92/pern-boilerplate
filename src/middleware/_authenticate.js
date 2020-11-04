@@ -5,7 +5,7 @@ module.exports = async (req, res, next) => {
   try {
     jwt.verify(
       req.cookies.t,
-      process.env.ACCESS_TOKEN_SECRET,
+      process.env.AUTH_TOKEN_SECRET,
       (err, decoded) => {
         if (err) {
           return res.status(401).json({

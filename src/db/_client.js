@@ -1,11 +1,11 @@
 require("dotenv").config();
 const Client = require("pg").Client;
 const devConfig = {
-  user: process.env.PGDB_USER,
-  host: process.env.PGDB_HOST,
-  database: process.env.PGDB_NAME,
-  password: process.env.PGDB_PASSWORD,
-  port: process.env.PGDB_PORT,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
 };
 
 const prodConfig = {

@@ -8,12 +8,11 @@
     "npm": "7.0.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "get-started": "npm install && cd client && npm install",
+    "build": "cd client && npm install && npm run build",
     "start": "node server.js",
-    "heroku-postbuild": "npm install --prefix ./client && npm run build --prefix ./client",
     "server": "nodemon server.js",
     "client": "npm start --prefix ./client",
-    "build": "npm run build --prefix ./client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Sambuddha Adhikari",
@@ -29,7 +28,6 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "pg": "^8.4.1",
-    "sequelize": "^6.3.5",
     "yes-https": "^2.0.0"
   }
 }
