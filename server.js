@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ silent: process.env.NODE_ENV === 'production' });
 const app = require("./src/app");
 const { resolve } = require("path");
 

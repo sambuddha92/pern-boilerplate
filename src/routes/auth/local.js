@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express"),
   router = express.Router(),
   bcrypt = require("bcryptjs"),
