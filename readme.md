@@ -1,4 +1,6 @@
 # PERN Boilerplate
+[Demo Website](https://simple-pern-boilerplate.herokuapp.com/).
+
 A simple boilerplate application built using the PERN stack. On this application, a user can Register, Login and browse private pages that are accessible to only logged in users. It should be possible to build on this project to build more complex applications.
 
 The key technologies used are as follows:
@@ -45,7 +47,7 @@ I am still working on the documentation and comments to make the codebase more u
       DB_PASSWORD = "YourPasswordHere"
       DB_PORT = 5432
       ```
-* Locate a file called  `.env.sample` in the client directory and rename it to just `.env`. Set the variable REACT_APP_DEFAULT_LOGIN_REDIRECT to the value "/dashboard". This file should have only `REACT_APP_DEFAULT_LOGIN_REDIRECT = "/dashboard"` at this point.
+* Locate a file called  `.env.sample` in the client directory and rename it to just `.env`. Keep the value of REACT_APP_DEFAULT_LOGIN_REDIRECT as "/dashboard" for now. This can be changed later.
 * Open a terminal and cd into the root directory of the project. If using VS code, simply press ``ctrl + ` `` to open the terminal window, make sure that you are in the root directory and not in some other directory. Then run the command `npm run get-started`. This will install all the node modules for both the frontend and backend.
 * Run `npm run dev` from the root directory itself to start the project up.
 * Optionally, run `npm run build` from the root directory itself to build a production ready version of the client in the `client/build` directory.
