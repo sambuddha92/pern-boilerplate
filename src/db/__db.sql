@@ -1,6 +1,13 @@
-CREATE DATABASE cumin; --Create a new table/database named cumin
+--To connect locally to postgres--
+--psql -U postgres;
 
-\c cumin; --Change the location to the newly created cumin database
+--To connect to external postgres db--
+--psql -h hostname -d databasename -U username;
+
+
+-- CREATE DATABASE cumin; --Create a new table/database named cumin
+
+-- \c cumin; --Change the location to the newly created cumin database
 
 CREATE TABLE app_user
 (
@@ -10,3 +17,5 @@ CREATE TABLE app_user
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255)
 );
+
+
