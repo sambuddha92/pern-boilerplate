@@ -1,6 +1,6 @@
---CREATE DATABASE cumin;
+CREATE DATABASE cumin; --Create a new table/database named cumin
 
---\c cumin;
+\c cumin; --Change the location to the newly created cumin database
 
 CREATE TABLE app_user
 (

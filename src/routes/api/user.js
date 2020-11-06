@@ -4,7 +4,7 @@ const express = require("express"),
  bcrypt = require("bcryptjs"),
  jwt = require("jsonwebtoken"),
  mw = require("../../middleware"),
- util = require("../../util");
+ db = require("../../db");
 
 //@route    POST api/user
 //@desc     Create a new user
@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
     const { login_id, password, first_name, last_name } = req.body;
 
     //Check and notify if user already exists
-    const existingUser = await util.getUserByLoginId(login_id);
+    const existingUser = await db.getUserByLoginId(login_id);
 
     if (existingUser) {
       return res.status(409).json({
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
     const hashed_password = await bcrypt.hash(password, salt);
 
     //Insert new user to the table and store the newUser in a variable
-    const newUser = await util.addNewUser(login_id, hashed_password, first_name, last_name);
+    const newUser = await db.addNewUser(login_id, hashed_password, first_name, last_name);
 
     //Prepare user info to be sent to client and for access token
     const authenticated_user = {

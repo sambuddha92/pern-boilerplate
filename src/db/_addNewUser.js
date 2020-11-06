@@ -1,4 +1,5 @@
-const { pool } = require("../db");
+const pool = require("./__pool");
+
 module.exports = async (login_id, hashed_password, first_name, last_name) => {
   try {
     const newUserAdd = await pool.query(

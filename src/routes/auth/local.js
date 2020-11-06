@@ -4,7 +4,7 @@ const express = require("express"),
   bcrypt = require("bcryptjs"),
   jwt = require("jsonwebtoken"),
   mw = require("../../middleware"),
-  util = require("../../util");
+  db = require("../../db");
 
 //@route    POST auth/local
 //@desc     Authenticate user and set access token cookie
@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
     const { login_id, password } = req.body;
 
     //Check and notify if user does not exist
-    const user = await util.getUserByLoginId(login_id);
+    const user = await db.getUserByLoginId(login_id);
     if (!user) {
       return res.status(404).json({
         message: "No such user",
