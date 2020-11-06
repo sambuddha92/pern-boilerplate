@@ -3,8 +3,7 @@ const express = require("express"),
   router = express.Router(),
   bcrypt = require("bcryptjs"),
   jwt = require("jsonwebtoken"),
-  mw = require("../../middleware"),
-  db = require("../../db");
+  mw = require("../../middleware");
 
 //@route    POST auth/local
 //@desc     Authenticate user and set access token cookie
@@ -14,7 +13,7 @@ router.post("/", async (req, res) => {
     const { login_id, password } = req.body;
 
     //Check and notify if user does not exist
-    const user = await db.getUserByLoginId(login_id);
+    const user = await mw.db.getUserByLoginId(login_id);
     if (!user) {
       return res.status(404).json({
         message: "No such user",
@@ -70,7 +69,7 @@ router.post("/", async (req, res) => {
 //@route    DELETE auth/local
 //@desc     Delete access token cookie
 //@access   private
-router.delete("/", [mw.authenticate], async (req, res) => {
+router.delete("/", [mw.auth.authenticate], async (req, res) => {
   try {
     res.clearCookie("t");
     return res.status(200).json({

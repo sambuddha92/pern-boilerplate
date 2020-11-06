@@ -1,5 +1,4 @@
-const authenticate = require("./_authenticate");
-
 module.exports = {
-  authenticate
+  db: require("./db"),
+  auth: require("./auth")
 };

@@ -1,7 +1,5 @@
-const addNewUser = require("./_addNewUser")
-const getUserByLoginId = require("./_getUserByLoginId")
+const pool = require("./_pool");
 
 module.exports = {
-    addNewUser,
-    getUserByLoginId
+    pool
 }

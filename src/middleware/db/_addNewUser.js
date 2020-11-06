@@ -1,4 +1,4 @@
-const pool = require("./__pool");
+const {pool} = require("../../db");
 
 module.exports = async (login_id, hashed_password, first_name, last_name) => {
   try {

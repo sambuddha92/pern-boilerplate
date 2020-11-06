@@ -1,4 +1,5 @@
-const pool = require("./__pool");
+const {pool} = require("../../db");
+
 module.exports = async (login_id) => {
   try {
     const queryResult = await pool.query(
